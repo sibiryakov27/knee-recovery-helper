@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" th:href="@{css/style.css}"/>
+        <link rel="stylesheet" type="text/css" th:href="@{css/test-oks.css}"/>
+        <title>Анкета OKS</title>
+    </head>
+    <body>
+        <header class="main-header">
+            <div class="container">
+                <nav class="main-header-nav">
+                    <div class="header-logo">
+                        <a href="/"><img src="img/logo.png" width="154" height="84" alt="Knee recovery helper"></a>
+                    </div>
+                    <ul class="site-navigation">
+                        <li class="site-navigation-item">
+                            <a href="/">Главная</a>
+                        </li>
+                        <li class="site-navigation-item">
+                            <a href="/exercises">Тренировки</a>
+                        </li>
+                        <li class="site-navigation-item current">
+                            <a>Анкета OKS</a>
+                        </li>
+                        <li class="site-navigation-item">
+                            <a href="/test-eq5d3l">Анкета EQ-5D-3L</a>
+                        </li>
+                        <li class="site-navigation-item">
+                            <a href="/about-system">О системе</a>
+                        </li>
+                        <li class="site-navigation-item">
+                            <a href="/profile">Мой профиль</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <div class="container">
+                <h1 class="page-title">Анкета OKS</h1>
+            </div>
+            <section class="test-oks">
+                <div class="container">
+                    <p class="test-oks-tip"><b>Вы ещё не заполняли данную анкету</b></p>
+                    <p>В каждом разделе отметьте один вариант ответа, который наилучшим образом 
+                        отражает состояние Вашего коленного сустава сегодня.</p>
+                    <form class="test-oks-form">
+                        <ol class="test-oks-list">
+                            <li class="test-oks-list-item">
+                                <p class="test-oks-question">Как бы Вы описали боли в колене, которые Вы обычно испытываете?</p>
+                                <div class="test-oks-answers">
+                                    <label>
+                                        <input type="radio" name="question-1" value="4">
+                                        Нет болей
+                                    </label><br>
+                                    <label>
+                                        <input type="radio" name="question-1" value="3">
+                                        Очень лёгкие
+                                    </label><br>
+                                    <label>
+                                        <input type="radio" name="question-1" value="2">
+                                        Лёгкие
+                                    </label><br>
+                                    <label>
+                                        <input type="radio" name="question-1" value="1">
+                                        Умеренные
+                                    </label><br>
+                                    <label>
+                                        <input type="radio" name="question-1" value="0">
+                                        Сильные
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="test-oks-list-item">
+                                <p class="test-oks-question">Испытывали ли Вы неудобства при мытье и вытирании полотенцем (всего тела) из-за колена?</p>
+                                <div class="test-oks-answers">
+                                    <label>
+                                        <input type="radio" name="question-2" value="4">
+                                        Никаких неудобств
+                                    </label><br>
+                                    <label>
+                                        <input type="radio" name="question-2" value="3">
+                                        Совсем небольшие
+                                    </label><br>
+                                    <label>
+                                        <input type="radio" name="question-2" value="2">
+                                        Умеренные
+                                    </label><br>
+                                    <label>
+                                        <input type="radio" name="question-2" value="1">
+                                        Очень выраженные
+                                    </label><br>
+                                    <label>
+                                        <input type="radio" name="question-2" value="0">
+                                        Невозможно это делать
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="test-oks-list-item">
+                                <p class="test-oks-question">Испытывали ли Вы неудобства при посадке и высадке из машины или при 
+                                    использовании общественного транспорта (в зависимости от того, чем Вы пользуетесь) из-за 
+                                    колена?</p>
+                                <div class="test-oks-answers">
+                                    <label>
+                                        <input type="radio" name="question-3" value="4">
+                                        Никаких неудобств
+                                    </label><br>
+                                    <label>
+                                        <input type="radio" name="question-3" value="3">
+                                        Совсем небольшие
+                                    </label><br>
+                                    <label>
+                                        <input type="radio" name="question-3" value="2">
+                                        Умеренные
+                                    </label><br>
+                                    <label>
+                                        <input type="radio" name="question-3" value="1">
+                                        Очень выраженные
+                                    </label><br>
+                                    <label>
+                                        <input type="radio" name="question-3" value="0">
+                                        Невозможно это делать
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="test-oks-list-item">
+                                <p class="test-oks-question">Как долго вы могли идти до тех пор, пока боли в колене не становились сильными 
+                                    (с тростью или без)?</p>
+                                <div class="test-oks-answers">
+                                    <label>
+                                        <input type="radio" name="question-4" value="4">
+                                        Нет болей/более 30 мин
+                                    </label><br>
+                                    <label>
+                                        <input type="radio" name="question-4" value="3">
+                                        От 16 до 30 мин
+                                    </label><br>
+                                    <label>
+                                        <input type="radio" name="question-4" value="2">
+                                        От 5 до 15 мин
+                                    </label><br>
+                                    <label>
+                                        <input type="radio" name="question-4" value="1">
+                                        Только по дому
+                                    </label><br>
+                                    <label>
+                                        <input type="radio" name="question-4" value="0">
+                                        Нисколько - сильные боли при ходьбе
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="test-oks-list-item">
+                                <p class="test-oks-question">Насколько больно из-за колена для Вас было вставать со стула после еды (посидев 
+                                    за столом)?</p>
+                                <div class="test-oks-answers">
+                                    <label>
+                                        <input type="radio" name="question-5" value="4">
+                                        Совсем не больно
+                                    </label><br>
+                                    <label>
+                                        <input type="radio" name="question-5" value="3">
+                                        Лёгкая боль
+                                    </label><br>
+                                    <label>
+                                        <input type="radio" name="question-5" value="2">
+                                        Умеренная боль
+                                    </label><br>
+                                    <label>
+                                        <input type="radio" name="question-5" value="1">
+                                        Сильная боль
+                                    </label><br>
+                                    <label>
+                                        <input type="radio" name="question-5" value="0">
+                                        Нестерпимая боль
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="test-oks-list-item">
+                                <p class="test-oks-question">Хромали ли Вы во время ходьбы из-за колена?</p>
+                                <div class="test-oks-answers">
+                                    <label>
+                                        <input type="radio" name="question-6" value="4">
+                                        Редко/никогда
+                                    </label><br>
+                                    <label>
+                                        <input type="radio" name="question-6" value="3">
+                                        Иногда или только поначалу
+                                    </label><br>
+                                    <label>
+                                        <input type="radio" name="question-6" value="2">
+                                        Часто, не только поначалу
+                                    </label><br>
+                                    <label>
+                                        <input type="radio" name="question-6" value="1">
+                                        Большую часть времени
+                                    </label><br>
+                                    <label>
+                                        <input type="radio" name="question-6" value="0">
+                                        Всё время
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="test-oks-list-item">
+                                <p class="test-oks-question">Могли ли Вы встать на колени и подняться после этого?</p>
+                                <div class="test-oks-answers">
+                                    <label>
+                                        <input type="radio" name="question-7" value="4">
+                                        Да, с лёгкостью
+                                    </label><br>
+                                    <label>
+                                        <input type="radio" name="question-7" value="3">
+                                        С небольшими затруднениями
+                                    </label><br>
+                                    <label>
+                                        <input type="radio" name="question-7" value="2">
+                                        С умеренными затруднениями
+                                    </label><br>
+                                    <label>
+                                        <input type="radio" name="question-7" value="1">
+                                        С чрезвычайными затруднениями
+                                    </label><br>
+                                    <label>
+                                        <input type="radio" name="question-7" value="0">
+                                        Нет, это невозможно
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="test-oks-list-item">
+                                <p class="test-oks-question">Беспокоили ли Вас боли в колене по ночам в постели?</p>
+                                <div class="test-oks-answers">
+                                    <label>
+                                        <input type="radio" name="question-8" value="4">
+                                        Ни одну ночь
+                                    </label><br>
+                                    <label>
+                                        <input type="radio" name="question-8" value="3">
+                                        Только 1 или 2 ночи
+                                    </label><br>
+                                    <label>
+                                        <input type="radio" name="question-8" value="2">
+                                        Некоторые ночи
+                                    </label><br>
+                                    <label>
+                                        <input type="radio" name="question-8" value="1">
+                                        Большинство ночей
+                                    </label><br>
+                                    <label>
+                                        <input type="radio" name="question-8" value="0">
+                                        Каждую ночь
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="test-oks-list-item">
+                                <p class="test-oks-question">Насколько боли в колене мешали выполнять Вашу обычную работу (в том числе 
+                                    работу по дому)?</p>
+                                <div class="test-oks-answers">
+                                    <label>
+                                        <input type="radio" name="question-9" value="4">
+                                        Совсем не мешали
+                                    </label><br>
+                                    <label>
+                                        <input type="radio" name="question-9" value="3">
+                                        Немного
+                                    </label><br>
+                                    <label>
+                                        <input type="radio" name="question-9" value="2">
+                                        Умеренно
+                                    </label><br>
+                                    <label>
+                                        <input type="radio" name="question-9" value="1">
+                                        Сильно
+                                    </label><br>
+                                    <label>
+                                        <input type="radio" name="question-9" value="0">
+                                        Не позволяли выполнять
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="test-oks-list-item">
+                                <p class="test-oks-question">Ощущали ли вы, что колено может внезапно прогибаться или подкашиваться?</p>
+                                <div class="test-oks-answers">
+                                    <label>
+                                        <input type="radio" name="question-10" value="4">
+                                        Редко/никогда
+                                    </label><br>
+                                    <label>
+                                        <input type="radio" name="question-10" value="3">
+                                        Иногда или только поначалу
+                                    </label><br>
+                                    <label>
+                                        <input type="radio" name="question-10" value="2">
+                                        Часто, не только поначалу
+                                    </label><br>
+                                    <label>
+                                        <input type="radio" name="question-10" value="1">
+                                        Большую часть времени
+                                    </label><br>
+                                    <label>
+                                        <input type="radio" name="question-10" value="0">
+                                        Всё время
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="test-oks-list-item">
+                                <p class="test-oks-question">Могли ли вы самостоятельно покупать еду и бытовые товары?</p>
+                                <div class="test-oks-answers">
+                                    <label>
+                                        <input type="radio" name="question-11" value="4">
+                                        Да, с лёгкостью
+                                    </label><br>
+                                    <label>
+                                        <input type="radio" name="question-11" value="3">
+                                        С небольшими затруднениями
+                                    </label><br>
+                                    <label>
+                                        <input type="radio" name="question-11" value="2">
+                                        С умеренными затруднениями
+                                    </label><br>
+                                    <label>
+                                        <input type="radio" name="question-11" value="1">
+                                        С чрезвычайными затруднениями
+                                    </label><br>
+                                    <label>
+                                        <input type="radio" name="question-11" value="0">
+                                        Нет, это невозможно
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="test-oks-list-item">
+                                <p class="test-oks-question">Могли ли Вы спуститься по лестнице на один этаж?</p>
+                                <div class="test-oks-answers">
+                                    <label>
+                                        <input type="radio" name="question-12" value="4">
+                                        Да, с лёгкостью
+                                    </label><br>
+                                    <label>
+                                        <input type="radio" name="question-12" value="3">
+                                        С небольшими затруднениями
+                                    </label><br>
+                                    <label>
+                                        <input type="radio" name="question-12" value="2">
+                                        С умеренными затруднениями
+                                    </label><br>
+                                    <label>
+                                        <input type="radio" name="question-12" value="1">
+                                        С чрезвычайными затруднениями
+                                    </label><br>
+                                    <label>
+                                        <input type="radio" name="question-12" value="0">
+                                        Нет, это невозможно
+                                    </label>
+                                </div>
+                            </li>
+                        </ol>
+                        <input class="btn" type="submit" value="Сохранить">
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <footer class="main-footer">
+            <div class="container">
+                <ul class="footer-navigation">
+                    <li class="footer-navigation-item">
+                        <a href="/">Главная</a>
+                    </li>
+                    <li class="footer-navigation-item">
+                        <a href="/exercises">Тренировки</a>
+                    </li>
+                    <li class="footer-navigation-item current">
+                        <a>Анкета OKS</a>
+                    </li>
+                    <li class="footer-navigation-item">
+                        <a href="/test-eq-5d-3l">Анкета EQ-5D-3L</a>
+                    </li>
+                    <li class="footer-navigation-item">
+                        <a href="/about-system">О системе</a>
+                    </li>
+                    <li class="footer-navigation-item">
+                        <a href="/profile">Мой профиль</a>
+                    </li>
+                </ul>
+                <span class="copyright">© 2022 Knee recovery helper</span>
+            </div>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,58 @@
+.exercise-title {
+    display: inline-block;
+    margin-top: 0;
+    margin-left: 0;
+    margin-bottom: 28px;
+    margin-right: 10px;
+    padding-right: 15px;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 24px;
+    color: #2C3157;
+    border-right: 1px solid rgba(44, 49, 87, 0.3);
+}
+
+.exercise-checkbox {
+    display: inline-block;
+}
+
+.exercise-checkbox input[type="checkbox"] {
+    margin: 0;
+}
+
+.first-group-exercise-1,
+.first-group-exercise-2,
+.first-group-exercise-3,
+.third-group-exercise-1,
+.third-group-exercise-2,
+.third-group-exercise-3 {
+    margin-top: 28px;
+}
+
+.exercise-pics-container {
+    text-align: center;
+}
+
+.exercise-pic {
+    display: inline-block;
+    text-align: center;
+    font-style: italic;
+    margin: 0 10px;
+    margin-top: 20px;
+    padding: 0;
+}
+
+.first-group,
+.second-group {
+    padding-bottom: 30px;
+    margin-bottom: 26px;
+    border-bottom: 1px solid rgba(44, 49, 87, 0.3);
+}
+
+.first-group {
+    margin-top: 56px;
+}
+
+.third-group {
+    margin-bottom: 60px;
+}

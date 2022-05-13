@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" th:href="@{css/style.css}"/>
+        <link rel="stylesheet" type="text/css" th:href="@{css/exercises.css}"/>
+        <title>Knee recovery helper</title>
+    </head>
+    <body>
+        <header class="main-header">
+            <div class="container">
+                <nav class="main-header-nav">
+                    <div class="header-logo">
+                        <a href="/"><img src="img/logo.png" width="154" height="84" alt="Knee recovery helper"></a>
+                    </div>
+                    <ul class="site-navigation">
+                        <li class="site-navigation-item">
+                            <a href="/">Главная</a>
+                        </li>
+                        <li class="site-navigation-item current">
+                            <a>Тренировки</a>
+                        </li>
+                        <li class="site-navigation-item">
+                            <a href="/test-oks">Анкета OKS</a>
+                        </li>
+                        <li class="site-navigation-item">
+                            <a href="/test-eq5d3l">Анкета EQ-5D-3L</a>
+                        </li>
+                        <li class="site-navigation-item">
+                            <a href="/about-system">О системе</a>
+                        </li>
+                        <li class="site-navigation-item">
+                            <a href="/profile">Мой профиль</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <div class="container">
+                <h1 class="page-title hidden">Тренировки</h1>
+            </div>
+            <section class="first-group">
+                <div class="container">
+                    <h2 class="section-title">Упражнения для укрепления мышц нижней конечности</h2>
+                    <div class="first-group-exercise-1">
+                        <h3 class="exercise-title">Упражнение 1</h3>
+                        <div class="exercise-checkbox">
+                            <input type="checkbox" id="fg-exercise-1" name="fg-exercise-1">
+                            <label for="fg-exercise-1">Выполнено</label>
+                        </div>
+                        <p>Напрягите мышцы бедра, разогнув нижнюю конечность в коленном суставе. 
+                            Удерживайте ее в таком состоянии 5–10 секунд. Повторите это упражнение 10 раз, 
+                            отдохните и повторяйте упражнение до наступления усталости мышц бедра.</p>
+                    </div>
+                    <div class="first-group-exercise-2">
+                        <h3 class="exercise-title">Упражнение 2</h3>
+                        <div class="exercise-checkbox">
+                            <input type="checkbox" id="fg-exercise-2" name="fg-exercise-2">
+                            <label for="fg-exercise-2">Выполнено</label>
+                        </div>
+                        <p><b>Поднятие прямой ноги.</b></p>
+                        <p>Лежа на кровати, напрягите мышцы бедра, полностью выпрямив нижнюю 
+                            конечность (рис. 1), поднимите ногу на несколько сантиметров над кроватью. Удерживайте ее 
+                            в таком положении в течение 5–10 секунд. Осторожно опустите. Повторите это упражнение 10 
+                            раз (рис. 2), отдохните и повторяйте упражнение до наступления усталости мышц бедра. 
+                            Это упражнение можно делать из положения лежа или сидя.</p>
+                        <div class="exercise-pics-container">
+                            <figure class="exercise-pic">
+                                <img src="../img/exercises-1.jpg" width="300" height="230" alt="Рис. 1">
+                                <figcaption><i>Рис. 1</i></figcaption>
+                            </figure>
+                            <figure class="exercise-pic">
+                                <img src="../img/exercises-2.jpg" width="300" height="230" alt="Рис. 2">
+                                <figcaption><i>Рис. 2</i></figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="first-group-exercise-3">
+                        <h3 class="exercise-title">Упражнение 3</h3>
+                        <div class="exercise-checkbox">
+                            <input type="checkbox" id="fg-exercise-3" name="fg-exercise-3">
+                            <label for="fg-exercise-3">Выполнено</label>
+                        </div>
+                        <p>Ритмично поднимайте и опускайте стопу, напрягая мышцы голени. Выполняйте это упражнение 
+                            по 2–3 минуты 2–3 раза в час (рис. 3, 4).</p>
+                        <div class="exercise-pics-container">
+                            <figure class="exercise-pic">
+                                <img src="../img/exercises-3.jpg" width="300" height="230" alt="Рис. 3">
+                                <figcaption><i>Рис. 3</i></figcaption>
+                            </figure>
+                            <figure class="exercise-pic">
+                                <img src="../img/exercises-4.jpg" width="300" height="230" alt="Рис. 4">
+                                <figcaption><i>Рис. 4</i></figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="second-group">
+                <div class="container">
+                    <h2 class="section-title">Упражнение для разгибания нижней конечности в коленном суставе</h2>
+                    <div class="second-group=exercise-1">
+                        <h3 class="exercise-title">Упражнение</h3>
+                        <div class="exercise-checkbox">
+                            <input type="checkbox" id="sg-exercise" name="sg-exercise">
+                            <label for="sg-exercise">Выполнено</label>
+                        </div>
+                        <p>Сверните полотенце и положите его под пятку так, чтобы она не касалась кровати. 
+                            Напрягая мышцы бедра, постарайтесь полностью разогнуть голень и задней поверхностью коленного 
+                            сустава прикоснуться к кровати (рис. 5). Повторяйте это упражнение до наступления усталости 
+                            мышц бедра.</p>
+                        <div class="exercise-pics-container">
+                            <figure class="exercise-pic">
+                                <img src="../img/exercises-5.jpg" width="300" height="230" alt="Рис. 5">
+                                <figcaption><i>Рис. 5</i></figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="third-group">
+                <div class="container">
+                    <h2 class="section-title">Упражнения для сгибания в коленном суставе</h2>
+                    <div class="third-group-exercise-1">
+                        <h3 class="exercise-title">Упражнение 1</h3>
+                        <div class="exercise-checkbox">
+                            <input type="checkbox" id="tg-exercise-1" name="tg-exercise-1">
+                            <label for="tg-exercise-1">Выполнено</label>
+                        </div>
+                        <p><b>Сгибание лежа с поддержкой.</b></p>
+                        <p>Максимально возможно сгибайте нижнюю конечность в коленном суставе. Стопа должна скользить 
+                            по кровати (рис. 6). Удержите нижнюю конечность в согнутом положении в течение 5–10 секунд, 
+                            затем разогните. Повторите это упражнение несколько раз.</p>
+                        <div class="exercise-pics-container">
+                            <figure class="exercise-pic">
+                                <img src="../img/exercises-6.jpg" width="340" height="240" alt="Рис. 6">
+                                <figcaption><i>Рис. 6</i></figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="third-group-exercise-2">
+                        <h3 class="exercise-title">Упражнение 2</h3>
+                        <div class="exercise-checkbox">
+                            <input type="checkbox" id="tg-exercise-2" name="tg-exercise-2">
+                            <label for="tg-exercise-2">Выполнено</label>
+                        </div>
+                        <p><b>Сгибание сидя с поддержкой.</b></p> 
+                        <p>Сядьте на край кровати или на стул (бедро должно иметь опору).
+                            Стопа здоровой ноги под пяткой оперированной нижней конечности
+                            (рис. 7).</p>
+                        <p>Максимально медленно согните нижнюю конечность в оперированном коленном суставе. 
+                            Удержите нижнюю конечность в согнутом положении в течение 5–10 секунд. Повторяйте это упражнение 
+                            до наступления усталости.</p>
+                        <div class="exercise-pics-container">
+                            <figure class="exercise-pic">
+                                <img src="../img/exercises-7.jpg" width="270" height="240" alt="Рис. 7">
+                                <figcaption><i>Рис. 7</i></figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="third-group-exercise-3">
+                        <h3 class="exercise-title">Упражнение 3</h3>
+                        <div class="exercise-checkbox">
+                            <input type="checkbox" id="tg-exercise-3" name="tg-exercise-3">
+                            <label for="tg-exercise-3">Выполнено</label>
+                        </div>
+                        <p><b>Сгибание сидя без поддержки.</b></p>
+                        <p>Сядьте на край кровати или на стул, бедро должно иметь опору (рис. 8).</p>
+                        <p>Максимально медленно согните нижнюю конечность в оперированном коленном суставе.
+                            Удержите нижнюю конечность в согнутом положении в течение 5–10 секунд. Повторяйте это
+                            упражнение до наступления усталости.</p>
+                        <div class="exercise-pics-container">
+                            <figure class="exercise-pic">
+                                <img src="../img/exercises-8.jpg" width="330" height="270" alt="Рис. 8">
+                                <figcaption><i>Рис. 8</i></figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="main-footer">
+            <div class="container">
+                <ul class="footer-navigation">
+                    <li class="footer-navigation-item">
+                        <a href="/">Главная</a>
+                    </li>
+                    <li class="footer-navigation-item current">
+                        <a>Тренировки</a>
+                    </li>
+                    <li class="footer-navigation-item">
+                        <a href="/test-oks">Анкета OKS</a>
+                    </li>
+                    <li class="footer-navigation-item">
+                        <a href="/test-eq-5d-3l">Анкета EQ-5D-3L</a>
+                    </li>
+                    <li class="footer-navigation-item">
+                        <a href="/about-system">О системе</a>
+                    </li>
+                    <li class="footer-navigation-item">
+                        <a href="/profile">Мой профиль</a>
+                    </li>
+                </ul>
+                <span class="copyright">© 2022 Knee recovery helper</span>
+            </div>
+        </footer>
+    </body>
+</html>

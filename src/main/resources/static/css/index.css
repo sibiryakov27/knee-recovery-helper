@@ -1,0 +1,96 @@
+.progress {
+    margin-top: 56px;
+    margin-bottom: 30px;
+}
+
+.progress-table {
+    width: 100%;
+    margin: 0;
+    line-height: 30px;
+    border-collapse: collapse;
+}
+
+.progress-table th {
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: left;
+  }
+
+.progress-table th,
+.progress-table td {
+    padding: 10px 17px;
+    border: 1px solid #d8d8d8;
+}
+
+.reports {
+    padding-top: 22px;
+    padding-bottom: 30px;
+    background-color: #f2f2f2;
+}
+
+.reports-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.feedback {
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+
+.feedback .container {
+    position: relative;
+}
+
+.feedback-tip {
+    position: absolute;
+    top: 0;
+    right: 0;
+    max-width: 500px;
+}
+
+.feedback-form {
+    width: 630px;
+}
+
+.feedback-form-group {
+    margin-bottom: 15px;
+    padding: 0;
+}
+
+.feedback-form-group label {
+    display: block;
+    padding-left: 17px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.feedback-form select,
+.feedback-form textarea {
+    width: 100%;
+    padding: 9px 15px;
+    height: 54px;
+    box-sizing: border-box;
+    font: inherit;
+    color: inherit;
+    border: 2px solid #d5d5d5;
+}
+
+.feedback-form select:hover,
+.feedback-form textarea:hover {
+    border-color: #bebebe;
+}
+
+.feedback-form select:focus,
+.feedback-form textarea:focus {
+    border-color: #2C3157;
+}
+
+.feedback-form textarea {
+    display: block;
+    min-height: 120px;
+}

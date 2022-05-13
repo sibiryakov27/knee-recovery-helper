@@ -1,0 +1,184 @@
+body {
+    min-width: 1040px;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    line-height: 24px;
+    font-family: "Arial", sans-serif;
+    color: #404040;
+    background-color: white;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 1020px;
+    margin: 0 auto;
+}
+
+.hidden {
+    display: none;
+}
+
+.btn {
+    display: inline-block;
+    width: 146px;
+    word-wrap: break-word;
+    padding: 10px;
+    vertical-align: top;
+    color: white;
+    font: inherit;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    background-color: #2C3157;
+    border-radius: 2px;
+}
+  
+.btn:hover {
+    background-color: #525570;
+}
+  
+.btn:active {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.page-title {
+    margin-top: 56px;
+    margin-left: 0;
+    margin-bottom: 26px;
+    margin-left: 0;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 40px;
+    font-family: "Georgia", serif;
+    color: #2C3157;
+}
+
+.section-title {
+    margin-top: 0;
+    margin-left: 0;
+    margin-bottom: 24px;
+    margin-right: 180px;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 32px;
+    font-family: "Georgia", serif;
+    color: #2C3157;
+}
+
+.main-header,
+.main-footer {
+    min-height: 120px;
+    padding-top: 30px;
+    height: auto;
+    background-color: #2C3157;
+}
+
+/* Шапка */
+
+.main-header-nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-logo {
+    display: inline-block;
+    width: 154px;
+    height: 84px;
+}
+
+.header.logo img {
+    width: 154px;
+    height: 84px;
+}
+
+.site-navigation {
+    display: inline-block;
+    margin: 0;
+    margin-top: 25px;
+    padding: 0;
+    list-style: none;
+}
+
+.site-navigation-item {
+    display: inline-block;
+    margin-right: -4px;
+    white-space: nowrap;
+}
+
+.site-navigation-item a {
+    display: block;
+    color: white;
+    padding: 8px 10px;
+    margin: 0;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 2px;
+}
+
+.site-navigation-item a:hover {
+    background-color: #525570;
+}
+
+.site-navigation-item a:active {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.site-navigation-item.current a {
+    color: rgba(255, 255, 255, 0.3);
+    background: none;
+}
+
+/* Подвал */
+
+.footer-navigation {
+    display: flex;
+    justify-content: center;
+    margin: auto 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-navigation-item {
+    display: inline-block;
+    margin-right: -4px;
+    white-space: nowrap;
+}
+
+.footer-navigation-item a {
+    display: block;
+    color: white;
+    padding: 8px 10px;
+    margin: 0;
+    text-decoration: none;
+}
+
+.footer-navigation-item a:hover {
+    text-decoration: underline;
+}
+
+.footer-navigation-item:active {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.footer-navigation-item.current a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.main-footer .container {
+    position: relative;
+}
+
+.copyright {
+    position: absolute;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    margin-top: 40px;
+    color: rgba(255, 255, 255, 0.3);
+}

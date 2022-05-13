@@ -1,0 +1,129 @@
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.section-title {
+    margin-right: 0;
+    text-align: center;
+}
+
+.btn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"] {
+    width: 100%;
+    padding: 9px 15px;
+    height: 40px;
+    box-sizing: border-box;
+    font: inherit;
+    color: inherit;
+    border: 2px solid #d5d5d5;
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="tel"]:hover,
+input[type="password"]:hover {
+    border-color: #bebebe;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="password"]:focus {
+    border-color: #2C3157;
+}
+
+.personal-data {
+    float: left;
+    width: 680px;
+    min-height: 370px;
+    margin: 0;
+    margin-top: 56px;
+    padding: 10px;
+    background-color: #f2f2f2;
+    border: 1px solid #2C3157;
+    border-radius: 2px;
+}
+
+.personal-data-form-group label {
+    display: block;
+    padding-left: 17px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.personal-data input[type="text"],
+.personal-data input[type="email"],
+.personal-data input[type="tel"] {
+    width: 300px;
+}
+
+.personal-data-form .left,
+.personal-data-form .right {
+    margin-bottom: 10px;
+}
+
+.personal-data-form .left {
+    margin-left: 10px;
+    float: left;
+}
+
+.personal-data-form .right {
+    margin-right: 10px;
+    float: right;
+}
+
+.personal-data-form-group {
+    margin-bottom: 10px;
+}
+
+.change-password {
+    float: right;
+    width: 280px;
+    min-height: 370px;
+    margin: 0;
+    margin-top: 56px;
+    padding: 10px;
+    background-color: #f2f2f2;
+    border: 1px solid #2C3157;
+    border-radius: 2px;
+}
+
+.change-password-form-group {
+    margin-bottom: 10px;
+}
+
+.change-password-form-group.old-password {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(44, 49, 87, 0.3);
+}
+
+.change-password-tip {
+    margin-bottom: 23px;
+}
+
+.change-password .btn {
+    width: 180px;
+}
+
+.doctor-info {
+    margin: 0;
+    margin-top: 16px;
+    margin-bottom: 56px;
+    padding: 10px;
+    background-color: #f2f2f2;
+    border: 1px solid #2C3157;
+    border-radius: 2px;
+}
