@@ -16,8 +16,18 @@
     display: inline-block;
 }
 
+.exercise-checkbox label {
+    font-weight: bold;
+    color: red;
+    transition-duration: 200ms;
+}
+
 .exercise-checkbox input[type="checkbox"] {
     margin: 0;
+}
+
+.exercise-checkbox input[type="checkbox"]:checked ~ label {
+    color: green;
 }
 
 .first-group-exercise-1,
