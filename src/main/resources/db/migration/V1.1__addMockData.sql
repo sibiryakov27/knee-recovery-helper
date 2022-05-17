@@ -1,7 +1,7 @@
-INSERT INTO patients (id, first_name, second_name, patronymic, email, password, enabled)
+INSERT INTO usrs (id, first_name, second_name, patronymic, email, password, enabled)
 VALUES
     (1, 'Ivan', 'Ivanov', 'Ivanovich', 'ivan.ivanov@mail.ru', 'password', true);
 
-INSERT INTO roles (roles, user_id)
+INSERT INTO roles (id, roles)
 VALUES
-    ('PATIENT', 1);
+    (1, 'PATIENT');

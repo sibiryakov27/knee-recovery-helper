@@ -1,20 +1,24 @@
+CREATE TABLE usrs (
+     id SERIAL PRIMARY KEY,
+     first_name VARCHAR(32),
+     second_name VARCHAR(32),
+     patronymic VARCHAR(32),
+     email VARCHAR(64) NOT NULL ,
+     phone_number VARCHAR(16),
+     password VARCHAR(32) NOT NULL,
+     enabled BOOLEAN NOT NULL
+);
+
 CREATE TABLE patients (
     id SERIAL PRIMARY KEY,
-    first_name VARCHAR(32),
-    second_name VARCHAR(32),
-    patronymic VARCHAR(32),
-    email VARCHAR(64) NOT NULL ,
-    phone_number VARCHAR(16),
     medical_card_number VARCHAR(32),
-    password VARCHAR(32) NOT NULL,
-    enabled BOOLEAN NOT NULL
+    FOREIGN KEY (id) REFERENCES patients(id)
 );
 
 CREATE TABLE roles (
     id SERIAL PRIMARY KEY,
     roles VARCHAR(32),
-    user_id INTEGER NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES patients(id)
+    FOREIGN KEY (id) REFERENCES usrs(id)
 );
 
 create table reports (
