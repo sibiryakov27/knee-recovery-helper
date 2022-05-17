@@ -3,7 +3,7 @@ CREATE TABLE usrs (
      first_name VARCHAR(32),
      second_name VARCHAR(32),
      patronymic VARCHAR(32),
-     email VARCHAR(64) NOT NULL ,
+     email VARCHAR(64) NOT NULL UNIQUE,
      phone_number VARCHAR(16),
      password VARCHAR(32) NOT NULL,
      enabled BOOLEAN NOT NULL

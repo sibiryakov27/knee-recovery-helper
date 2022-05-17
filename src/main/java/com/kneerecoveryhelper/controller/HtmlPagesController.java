@@ -1,6 +1,9 @@
 package com.kneerecoveryhelper.controller;
 
+import com.kneerecoveryhelper.entity.UserEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
@@ -22,7 +25,11 @@ public class HtmlPagesController {
   }
 
   @GetMapping("/profile")
-  public String showProfilePage() {
+  public String showProfilePage(
+      @AuthenticationPrincipal UserEntity user,
+      Model model
+  ) {
+    model.addAttribute("user", user);
     return "profile";
   }
 
