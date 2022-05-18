@@ -1,0 +1,41 @@
+main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.logo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.section-title {
+  margin-right: 0;
+}
+
+.login {
+  margin: 0;
+  padding: 20px;
+  border: 2px solid #2C3157;
+  border-radius: 2px;
+}
+
+.login-form-group input {
+  margin: 0;
+  margin-top: 20px;
+}
+
+.login-form-group input:not([type="submit"]) {
+  width: 100%;
+  padding: 9px 15px;
+  height: 40px;
+  box-sizing: border-box;
+  font: inherit;
+  color: inherit;
+  border: 2px solid #d5d5d5;
+}
+
+.login-submit {
+  text-align: center;
+}
