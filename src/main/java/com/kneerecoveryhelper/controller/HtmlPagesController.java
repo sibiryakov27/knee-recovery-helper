@@ -21,6 +21,11 @@ public class HtmlPagesController {
     return "index";
   }
 
+  @GetMapping("/login")
+  public String login() {
+    return "login";
+  }
+
   @GetMapping("/about-system")
   public String showAboutIndexPage() {
     return "about-system";
