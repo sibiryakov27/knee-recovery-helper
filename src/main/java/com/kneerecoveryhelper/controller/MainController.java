@@ -1,6 +1,6 @@
 package com.kneerecoveryhelper.controller;
 
-import com.kneerecoveryhelper.Service.PatientService;
+import com.kneerecoveryhelper.service.PatientService;
 import com.kneerecoveryhelper.controller.requests.PatientRequest;
 import com.kneerecoveryhelper.entity.PatientEntity;
 import com.kneerecoveryhelper.entity.UserEntity;

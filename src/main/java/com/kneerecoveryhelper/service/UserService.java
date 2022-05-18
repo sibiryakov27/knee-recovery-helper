@@ -1,4 +1,4 @@
-package com.kneerecoveryhelper.Service;
+package com.kneerecoveryhelper.service;
 
 import com.kneerecoveryhelper.entity.UserEntity;
 import com.kneerecoveryhelper.repository.UserRepository;

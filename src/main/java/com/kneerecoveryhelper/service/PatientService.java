@@ -1,4 +1,4 @@
-package com.kneerecoveryhelper.Service;
+package com.kneerecoveryhelper.service;
 
 import com.kneerecoveryhelper.controller.requests.PatientRequest;
 import com.kneerecoveryhelper.entity.PatientEntity;

@@ -1,6 +1,6 @@
 package com.kneerecoveryhelper.configuration;
 
-import com.kneerecoveryhelper.Service.UserService;
+import com.kneerecoveryhelper.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
