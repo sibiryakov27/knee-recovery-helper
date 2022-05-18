@@ -48,29 +48,29 @@
                             <div class="left">
                                 <div class="personal-data-form-group">
                                     <label for="first-name">Имя</label>
-                                    <input type="text" name="first-name" id="first-name" th:value="${user.getFirstName()}">
+                                    <input type="text" name="first-name" id="first-name" th:value="${patient.getFirstName()}">
                                 </div>
                                 <div class="personal-data-form-group">
                                     <label for="second-name">Фамилия</label>
-                                    <input type="text" name="second-name" id="second-name">
+                                    <input type="text" name="second-name" id="second-name" th:value="${patient.getSecondName()}">
                                 </div>
                                 <div class="personal-data-form-group">
                                     <label for="patronymic">Отчество</label>
-                                    <input type="text" name="patronymic" id="patronymic">
+                                    <input type="text" name="patronymic" id="patronymic" th:value="${patient.getPatronymic()}">
                                 </div>
                             </div>
                             <div class="right">
                                 <div class="personal-data-form-group">
                                     <label for="email">Email</label>
-                                    <input type="email" name="email" id="email">
+                                    <input type="email" name="email" id="email" th:value="${patient.getEmail()}">
                                 </div>
                                 <div class="personal-data-form-group">
                                     <label for="tel">Телефон</label>
-                                    <input type="tel" name="tel" id="tel">
+                                    <input type="tel" name="tel" id="tel" th:value="${patient.getPhoneNumber()}">
                                 </div>
                                 <div class="personal-data-form-group">
                                     <label for="med-number">Номер медицинской карты</label>
-                                    <input type="text" name="med-number" id="med-number">
+                                    <input type="text" name="med-number" id="med-number" th:value="${patient.getMedicalCardNumber()}">
                                 </div>
                             </div>
                         </div>
@@ -86,7 +86,7 @@
                         <input type="password" name="new-password" id="new-password" placeholder="Новый пароль">
                     </div>
                     <div class="change-password-form-group">
-                        <input type="password" name="new-password" id="new-password" placeholder="Повторите пароль">
+                        <input type="password" name="new-password-repeat" id="new-password-repeat" placeholder="Повторите пароль">
                     </div>
                     <p class="change-password-tip">Не менее 8 символов, используйте цифры и буквы латинского алфавита</p>
                     <input class="btn" type="submit" value="Изменить пароль">

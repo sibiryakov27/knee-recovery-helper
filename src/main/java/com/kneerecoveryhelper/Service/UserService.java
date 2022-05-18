@@ -1,6 +1,8 @@
 package com.kneerecoveryhelper.Service;
 
+import com.kneerecoveryhelper.entity.UserEntity;
 import com.kneerecoveryhelper.repository.UserRepository;
+import java.util.Optional;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -15,7 +17,8 @@ public class UserService implements UserDetailsService {
 
   @Override
   public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-    return userRepository.findByEmail(username).get();
+    Optional<UserEntity> user = userRepository.findByEmail(username);
+    return user.get(); // TODO: added checking optional
   }
 
 }

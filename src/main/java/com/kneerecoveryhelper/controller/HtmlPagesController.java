@@ -1,13 +1,20 @@
 package com.kneerecoveryhelper.controller;
 
+import com.kneerecoveryhelper.Service.PatientService;
+import com.kneerecoveryhelper.entity.PatientEntity;
 import com.kneerecoveryhelper.entity.UserEntity;
+import com.kneerecoveryhelper.repository.PatientRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
+@AllArgsConstructor
 public class HtmlPagesController {
+
+  private PatientService patientService;
 
   @GetMapping("/")
   public String showIndexPage() {
@@ -29,7 +36,8 @@ public class HtmlPagesController {
       @AuthenticationPrincipal UserEntity user,
       Model model
   ) {
-    model.addAttribute("user", user);
+    PatientEntity patient = patientService.getPatientById(user.getId());
+    model.addAttribute("patient", patient);
     return "profile";
   }
 
