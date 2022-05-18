@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 
 @Controller
 @AllArgsConstructor
-public class HtmlPagesController {
+public class MainController {
 
   private PatientService patientService;
 
