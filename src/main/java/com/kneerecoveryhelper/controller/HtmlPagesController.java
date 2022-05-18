@@ -4,7 +4,6 @@ import com.kneerecoveryhelper.Service.PatientService;
 import com.kneerecoveryhelper.controller.requests.PatientRequest;
 import com.kneerecoveryhelper.entity.PatientEntity;
 import com.kneerecoveryhelper.entity.UserEntity;
-import com.kneerecoveryhelper.repository.PatientRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
