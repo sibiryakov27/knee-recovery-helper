@@ -43,16 +43,16 @@
             <div class="container clearfix">
                 <section class="personal-data">
                     <h2 class="section-title">Мои данные</h2>
-                    <form class="personal-data-form">
+                    <form class="personal-data-form" th:action="@{/profile/{id}/update(id = ${patient.getId()})}" th:method="put">
                         <div class="clearfix">
                             <div class="left">
                                 <div class="personal-data-form-group">
                                     <label for="first-name">Имя</label>
-                                    <input type="text" name="first-name" id="first-name" th:value="${patient.getFirstName()}">
+                                    <input type="text" name="firstName" id="first-name" th:value="${patient.getFirstName()}">
                                 </div>
                                 <div class="personal-data-form-group">
                                     <label for="second-name">Фамилия</label>
-                                    <input type="text" name="second-name" id="second-name" th:value="${patient.getSecondName()}">
+                                    <input type="text" name="secondName" id="second-name" th:value="${patient.getSecondName()}">
                                 </div>
                                 <div class="personal-data-form-group">
                                     <label for="patronymic">Отчество</label>
@@ -62,15 +62,15 @@
                             <div class="right">
                                 <div class="personal-data-form-group">
                                     <label for="email">Email</label>
-                                    <input type="email" name="email" id="email" th:value="${patient.getEmail()}">
+                                    <input type="email" name="email" id="email" th:value="${patient.getEmail()}" required>
                                 </div>
                                 <div class="personal-data-form-group">
                                     <label for="tel">Телефон</label>
-                                    <input type="tel" name="tel" id="tel" th:value="${patient.getPhoneNumber()}">
+                                    <input type="tel" name="phoneNumber" id="tel" th:value="${patient.getPhoneNumber()}">
                                 </div>
                                 <div class="personal-data-form-group">
                                     <label for="med-number">Номер медицинской карты</label>
-                                    <input type="text" name="med-number" id="med-number" th:value="${patient.getMedicalCardNumber()}">
+                                    <input type="text" name="medicalCardNumber" id="med-number" th:value="${patient.getMedicalCardNumber()}" readonly>
                                 </div>
                             </div>
                         </div>
