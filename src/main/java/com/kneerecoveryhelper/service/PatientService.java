@@ -23,10 +23,12 @@ public class PatientService {
   public PatientEntity updatePatient(PatientRequest patientRequest, Integer id) {
     PatientEntity patient = modelMapper.map(patientRequest, PatientEntity.class);
     PatientEntity updatedPatient = patientRepository.getById(id);
-    patient.setId(id);
-    patient.setPassword(updatedPatient.getPassword());
-    patient.setEnabled(updatedPatient.getEnabled());
-    patient.setRoles(updatedPatient.getRoles());
+    patient.setId(id)
+        .setPassword(updatedPatient.getPassword())
+        .setEnabled(updatedPatient.getEnabled())
+        .setRoles(updatedPatient.getRoles());
+    patient.setStartRecoveryDate(updatedPatient.getStartRecoveryDate());
+
     updatedPatient = patientRepository.save(patient);
     return updatedPatient;
   }

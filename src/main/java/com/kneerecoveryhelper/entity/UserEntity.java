@@ -18,6 +18,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.experimental.Accessors;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -26,6 +27,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 @Setter
 @Table(name = "usrs")
 @Inheritance(strategy = InheritanceType.JOINED)
+@Accessors(chain = true)
 public class UserEntity implements UserDetails {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)

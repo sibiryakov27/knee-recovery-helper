@@ -1,5 +1,6 @@
 package com.kneerecoveryhelper.controller;
 
+import com.kneerecoveryhelper.controller.requests.OksRequest;
 import com.kneerecoveryhelper.service.PatientService;
 import com.kneerecoveryhelper.controller.requests.PatientRequest;
 import com.kneerecoveryhelper.entity.PatientEntity;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 
 @Controller
@@ -54,7 +56,12 @@ public class MainController {
   }
 
   @GetMapping("/test-oks")
-  public String showTestOKS() {
+  public String showTestOKS(
+      @AuthenticationPrincipal UserEntity user,
+      Model model
+  ) {
+    PatientEntity patient = patientService.getPatientById(user.getId());
+    model.addAttribute("patient", patient);
     return "test-oks";
   }
 
@@ -68,6 +75,16 @@ public class MainController {
     PatientEntity patient = patientService.updatePatient(patientRequest, id);
     model.addAttribute("patient", patient);
     return "redirect:/profile";
+  }
+
+  @PostMapping("/test-oks/{id}/save")
+  public String saveOksResult(
+      @PathVariable Integer id,
+      OksRequest oksRequest,
+      Model model
+  ) {
+    System.out.println(oksRequest);
+    return "redirect:/test-oks";
   }
 
 }

@@ -47,29 +47,30 @@
                     <p class="test-oks-tip"><b>Вы ещё не заполняли данную анкету</b></p>
                     <p>В каждом разделе отметьте один вариант ответа, который наилучшим образом 
                         отражает состояние Вашего коленного сустава сегодня.</p>
-                    <form class="test-oks-form">
+                    <form class="test-oks-form" th:action="@{/test-oks/{id}/save(id = ${patient.getId()})}" th:method="post">
+                        <input type="hidden" name="passageDate" th:value="${#dates.format(#dates.createNow(), 'yyyy-MM-dd')}">
                         <ol class="test-oks-list">
                             <li class="test-oks-list-item">
                                 <p class="test-oks-question">Как бы Вы описали боли в колене, которые Вы обычно испытываете?</p>
                                 <div class="test-oks-answers">
                                     <label>
-                                        <input type="radio" name="question-1" value="4">
+                                        <input type="radio" name="questions[0]" value="4">
                                         Нет болей
                                     </label><br>
                                     <label>
-                                        <input type="radio" name="question-1" value="3">
+                                        <input type="radio" name="questions[0]" value="3">
                                         Очень лёгкие
                                     </label><br>
                                     <label>
-                                        <input type="radio" name="question-1" value="2">
+                                        <input type="radio" name="questions[0]" value="2">
                                         Лёгкие
                                     </label><br>
                                     <label>
-                                        <input type="radio" name="question-1" value="1">
+                                        <input type="radio" name="questions[0]" value="1">
                                         Умеренные
                                     </label><br>
                                     <label>
-                                        <input type="radio" name="question-1" value="0">
+                                        <input type="radio" name="questions[0]" value="0">
                                         Сильные
                                     </label>
                                 </div>
@@ -78,23 +79,23 @@
                                 <p class="test-oks-question">Испытывали ли Вы неудобства при мытье и вытирании полотенцем (всего тела) из-за колена?</p>
                                 <div class="test-oks-answers">
                                     <label>
-                                        <input type="radio" name="question-2" value="4">
+                                        <input type="radio" name="questions[1]" value="4">
                                         Никаких неудобств
                                     </label><br>
                                     <label>
-                                        <input type="radio" name="question-2" value="3">
+                                        <input type="radio" name="questions[1]" value="3">
                                         Совсем небольшие
                                     </label><br>
                                     <label>
-                                        <input type="radio" name="question-2" value="2">
+                                        <input type="radio" name="questions[1]" value="2">
                                         Умеренные
                                     </label><br>
                                     <label>
-                                        <input type="radio" name="question-2" value="1">
+                                        <input type="radio" name="questions[1]" value="1">
                                         Очень выраженные
                                     </label><br>
                                     <label>
-                                        <input type="radio" name="question-2" value="0">
+                                        <input type="radio" name="questions[1]" value="0">
                                         Невозможно это делать
                                     </label>
                                 </div>
@@ -105,23 +106,23 @@
                                     колена?</p>
                                 <div class="test-oks-answers">
                                     <label>
-                                        <input type="radio" name="question-3" value="4">
+                                        <input type="radio" name="questions[2]" value="4">
                                         Никаких неудобств
                                     </label><br>
                                     <label>
-                                        <input type="radio" name="question-3" value="3">
+                                        <input type="radio" name="questions[2]" value="3">
                                         Совсем небольшие
                                     </label><br>
                                     <label>
-                                        <input type="radio" name="question-3" value="2">
+                                        <input type="radio" name="questions[2]" value="2">
                                         Умеренные
                                     </label><br>
                                     <label>
-                                        <input type="radio" name="question-3" value="1">
+                                        <input type="radio" name="questions[2]" value="1">
                                         Очень выраженные
                                     </label><br>
                                     <label>
-                                        <input type="radio" name="question-3" value="0">
+                                        <input type="radio" name="questions[2]" value="0">
                                         Невозможно это делать
                                     </label>
                                 </div>
@@ -131,23 +132,23 @@
                                     (с тростью или без)?</p>
                                 <div class="test-oks-answers">
                                     <label>
-                                        <input type="radio" name="question-4" value="4">
+                                        <input type="radio" name="questions[3]" value="4">
                                         Нет болей/более 30 мин
                                     </label><br>
                                     <label>
-                                        <input type="radio" name="question-4" value="3">
+                                        <input type="radio" name="questions[3]" value="3">
                                         От 16 до 30 мин
                                     </label><br>
                                     <label>
-                                        <input type="radio" name="question-4" value="2">
+                                        <input type="radio" name="questions[3]" value="2">
                                         От 5 до 15 мин
                                     </label><br>
                                     <label>
-                                        <input type="radio" name="question-4" value="1">
+                                        <input type="radio" name="questions[3]" value="1">
                                         Только по дому
                                     </label><br>
                                     <label>
-                                        <input type="radio" name="question-4" value="0">
+                                        <input type="radio" name="questions[3]" value="0">
                                         Нисколько - сильные боли при ходьбе
                                     </label>
                                 </div>
@@ -157,23 +158,23 @@
                                     за столом)?</p>
                                 <div class="test-oks-answers">
                                     <label>
-                                        <input type="radio" name="question-5" value="4">
+                                        <input type="radio" name="questions[4]" value="4">
                                         Совсем не больно
                                     </label><br>
                                     <label>
-                                        <input type="radio" name="question-5" value="3">
+                                        <input type="radio" name="questions[4]" value="3">
                                         Лёгкая боль
                                     </label><br>
                                     <label>
-                                        <input type="radio" name="question-5" value="2">
+                                        <input type="radio" name="questions[4]" value="2">
                                         Умеренная боль
                                     </label><br>
                                     <label>
-                                        <input type="radio" name="question-5" value="1">
+                                        <input type="radio" name="questions[4]" value="1">
                                         Сильная боль
                                     </label><br>
                                     <label>
-                                        <input type="radio" name="question-5" value="0">
+                                        <input type="radio" name="questions[4]" value="0">
                                         Нестерпимая боль
                                     </label>
                                 </div>
@@ -182,23 +183,23 @@
                                 <p class="test-oks-question">Хромали ли Вы во время ходьбы из-за колена?</p>
                                 <div class="test-oks-answers">
                                     <label>
-                                        <input type="radio" name="question-6" value="4">
+                                        <input type="radio" name="questions[5]" value="4">
                                         Редко/никогда
                                     </label><br>
                                     <label>
-                                        <input type="radio" name="question-6" value="3">
+                                        <input type="radio" name="questions[5]" value="3">
                                         Иногда или только поначалу
                                     </label><br>
                                     <label>
-                                        <input type="radio" name="question-6" value="2">
+                                        <input type="radio" name="questions[5]" value="2">
                                         Часто, не только поначалу
                                     </label><br>
                                     <label>
-                                        <input type="radio" name="question-6" value="1">
+                                        <input type="radio" name="questions[5]" value="1">
                                         Большую часть времени
                                     </label><br>
                                     <label>
-                                        <input type="radio" name="question-6" value="0">
+                                        <input type="radio" name="questions[5]" value="0">
                                         Всё время
                                     </label>
                                 </div>
@@ -207,23 +208,23 @@
                                 <p class="test-oks-question">Могли ли Вы встать на колени и подняться после этого?</p>
                                 <div class="test-oks-answers">
                                     <label>
-                                        <input type="radio" name="question-7" value="4">
+                                        <input type="radio" name="questions[6]" value="4">
                                         Да, с лёгкостью
                                     </label><br>
                                     <label>
-                                        <input type="radio" name="question-7" value="3">
+                                        <input type="radio" name="questions[6]" value="3">
                                         С небольшими затруднениями
                                     </label><br>
                                     <label>
-                                        <input type="radio" name="question-7" value="2">
+                                        <input type="radio" name="questions[6]" value="2">
                                         С умеренными затруднениями
                                     </label><br>
                                     <label>
-                                        <input type="radio" name="question-7" value="1">
+                                        <input type="radio" name="questions[6]" value="1">
                                         С чрезвычайными затруднениями
                                     </label><br>
                                     <label>
-                                        <input type="radio" name="question-7" value="0">
+                                        <input type="radio" name="questions[6]" value="0">
                                         Нет, это невозможно
                                     </label>
                                 </div>
@@ -232,49 +233,49 @@
                                 <p class="test-oks-question">Беспокоили ли Вас боли в колене по ночам в постели?</p>
                                 <div class="test-oks-answers">
                                     <label>
-                                        <input type="radio" name="question-8" value="4">
+                                        <input type="radio" name="questions[7]" value="4">
                                         Ни одну ночь
                                     </label><br>
                                     <label>
-                                        <input type="radio" name="question-8" value="3">
+                                        <input type="radio" name="questions[7]" value="3">
                                         Только 1 или 2 ночи
                                     </label><br>
                                     <label>
-                                        <input type="radio" name="question-8" value="2">
+                                        <input type="radio" name="questions[7]" value="2">
                                         Некоторые ночи
                                     </label><br>
                                     <label>
-                                        <input type="radio" name="question-8" value="1">
+                                        <input type="radio" name="questions[7]" value="1">
                                         Большинство ночей
                                     </label><br>
                                     <label>
-                                        <input type="radio" name="question-8" value="0">
+                                        <input type="radio" name="questions[7]" value="0">
                                         Каждую ночь
                                     </label>
                                 </div>
                             </li>
                             <li class="test-oks-list-item">
-                                <p class="test-oks-question">Насколько боли в колене мешали выполнять Вашу обычную работу (в том числе 
-                                    работу по дому)?</p>
+                                <p class="test-oks-question">Насколько боли в колене мешали выполнять
+                                    Вашу обычную работу (в том числе работу по дому)?</p>
                                 <div class="test-oks-answers">
                                     <label>
-                                        <input type="radio" name="question-9" value="4">
+                                        <input type="radio" name="questions[8]" value="4">
                                         Совсем не мешали
                                     </label><br>
                                     <label>
-                                        <input type="radio" name="question-9" value="3">
+                                        <input type="radio" name="questions[8]" value="3">
                                         Немного
                                     </label><br>
                                     <label>
-                                        <input type="radio" name="question-9" value="2">
+                                        <input type="radio" name="questions[8]" value="2">
                                         Умеренно
                                     </label><br>
                                     <label>
-                                        <input type="radio" name="question-9" value="1">
+                                        <input type="radio" name="questions[8]" value="1">
                                         Сильно
                                     </label><br>
                                     <label>
-                                        <input type="radio" name="question-9" value="0">
+                                        <input type="radio" name="questions[8]" value="0">
                                         Не позволяли выполнять
                                     </label>
                                 </div>
@@ -283,23 +284,23 @@
                                 <p class="test-oks-question">Ощущали ли вы, что колено может внезапно прогибаться или подкашиваться?</p>
                                 <div class="test-oks-answers">
                                     <label>
-                                        <input type="radio" name="question-10" value="4">
+                                        <input type="radio" name="questions[9]" value="4">
                                         Редко/никогда
                                     </label><br>
                                     <label>
-                                        <input type="radio" name="question-10" value="3">
+                                        <input type="radio" name="questions[9]" value="3">
                                         Иногда или только поначалу
                                     </label><br>
                                     <label>
-                                        <input type="radio" name="question-10" value="2">
+                                        <input type="radio" name="questions[9]" value="2">
                                         Часто, не только поначалу
                                     </label><br>
                                     <label>
-                                        <input type="radio" name="question-10" value="1">
+                                        <input type="radio" name="questions[9]" value="1">
                                         Большую часть времени
                                     </label><br>
                                     <label>
-                                        <input type="radio" name="question-10" value="0">
+                                        <input type="radio" name="questions[9]" value="0">
                                         Всё время
                                     </label>
                                 </div>
@@ -308,23 +309,23 @@
                                 <p class="test-oks-question">Могли ли вы самостоятельно покупать еду и бытовые товары?</p>
                                 <div class="test-oks-answers">
                                     <label>
-                                        <input type="radio" name="question-11" value="4">
+                                        <input type="radio" name="questions[10]" value="4">
                                         Да, с лёгкостью
                                     </label><br>
                                     <label>
-                                        <input type="radio" name="question-11" value="3">
+                                        <input type="radio" name="questions[10]" value="3">
                                         С небольшими затруднениями
                                     </label><br>
                                     <label>
-                                        <input type="radio" name="question-11" value="2">
+                                        <input type="radio" name="questions[10]" value="2">
                                         С умеренными затруднениями
                                     </label><br>
                                     <label>
-                                        <input type="radio" name="question-11" value="1">
+                                        <input type="radio" name="questions[10]" value="1">
                                         С чрезвычайными затруднениями
                                     </label><br>
                                     <label>
-                                        <input type="radio" name="question-11" value="0">
+                                        <input type="radio" name="questions[10]" value="0">
                                         Нет, это невозможно
                                     </label>
                                 </div>
@@ -333,23 +334,23 @@
                                 <p class="test-oks-question">Могли ли Вы спуститься по лестнице на один этаж?</p>
                                 <div class="test-oks-answers">
                                     <label>
-                                        <input type="radio" name="question-12" value="4">
+                                        <input type="radio" name="questions[11]" value="4">
                                         Да, с лёгкостью
                                     </label><br>
                                     <label>
-                                        <input type="radio" name="question-12" value="3">
+                                        <input type="radio" name="questions[11]" value="3">
                                         С небольшими затруднениями
                                     </label><br>
                                     <label>
-                                        <input type="radio" name="question-12" value="2">
+                                        <input type="radio" name="questions[11]" value="2">
                                         С умеренными затруднениями
                                     </label><br>
                                     <label>
-                                        <input type="radio" name="question-12" value="1">
+                                        <input type="radio" name="questions[11]" value="1">
                                         С чрезвычайными затруднениями
                                     </label><br>
                                     <label>
-                                        <input type="radio" name="question-12" value="0">
+                                        <input type="radio" name="questions[11]" value="0">
                                         Нет, это невозможно
                                     </label>
                                 </div>
