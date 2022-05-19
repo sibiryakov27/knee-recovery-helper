@@ -2,9 +2,9 @@ INSERT INTO usrs (id, first_name, second_name, patronymic, email, password, enab
 VALUES
     (1, 'Ivan', 'Ivanov', 'Ivanovich', 'ivan.ivanov@mail.ru', 'password', true);
 
-INSERT INTO patients (id, medical_card_number)
+INSERT INTO patients (id, start_recovery_date, medical_card_number)
 VALUES
-    (1, '123123123');
+    (1, '2022-05-19', '123123123');
 
 INSERT INTO roles (id, roles)
 VALUES
