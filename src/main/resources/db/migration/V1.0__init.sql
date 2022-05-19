@@ -34,7 +34,7 @@ create table oks_result (
     id SERIAL PRIMARY KEY,
     points INTEGER NOT NULL,
     patient_id INTEGER NOT NULL,
-    passage_date TIMESTAMP,
+    passage_date DATE NOT NULL,
     week_number INTEGER NOT NULL,
     FOREIGN KEY (patient_id) REFERENCES patients(id)
 );
