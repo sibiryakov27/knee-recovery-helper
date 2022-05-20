@@ -45,51 +45,53 @@
                     <p class="test-eq5d3l-tip"><b>Вы ещё не заполняли данную анкету</b></p>
                     <p>В каждом разделе отметьте один вариант ответа, который наилучшим образом 
                         отражает состояние Вашего коленного сустава сегодня.</p>
-                    <form class="test-eq5d3l-form" oninput="healthoutput.value=health.value">
+                    <form class="test-eq5d3l-form" oninput="healthoutput.value=health.value"
+                          th:action="@{/test-eq5d3l/{id}/save(id = ${patient.getId()})}" th:method="post">
+                        <input type="hidden" name="passageDate" th:value="${#dates.format(#dates.createNow(), 'yyyy-MM-dd')}">
                         <ul class="test-eq5d3l-list">
                             <li class="test-eq5d3l-list-item">
                                 <p class="test-eq5d3l-question">ПОДВИЖНОСТЬ</p>
                                 <label>
-                                    <input type="radio" name="question-1" value="0">
+                                    <input type="radio" name="questions[0]" value="4">
                                     Я не испытываю никаких трудностей при ходьбе
                                 </label><br>
                                 <label>
-                                    <input type="radio" name="question-1" value="1">
+                                    <input type="radio" name="questions[0]" value="3">
                                     Я испытываю небольшие трудности при ходьбе
                                 </label><br>
                                 <label>
-                                    <input type="radio" name="question-1" value="2">
+                                    <input type="radio" name="questions[0]" value="2">
                                     Я испытываю умеренные трудности при ходьбе
                                 </label><br>
                                 <label>
-                                    <input type="radio" name="question-1" value="3">
+                                    <input type="radio" name="questions[0]" value="1">
                                     Я испытываю большие трудности при ходьбе
                                 </label><br>
                                 <label>
-                                    <input type="radio" name="question-1" value="4">
+                                    <input type="radio" name="questions[0]" value="0">
                                     Я не в состоянии ходить
                                 </label>
                             </li>
                             <li class="test-eq5d3l-list-item">
                                 <p class="test-eq5d3l-question">УХОД ЗА СОБОЙ</p>
                                 <label>
-                                    <input type="radio" name="question-2" value="0">
+                                    <input type="radio" name="questions[1]" value="4">
                                     Я не испытываю никаких трудностей с мытьём или одеванием
                                 </label><br>
                                 <label>
-                                    <input type="radio" name="question-2" value="1">
+                                    <input type="radio" name="questions[1]" value="3">
                                     Я испытываю небольшие трудности с мытьём или одеванием
                                 </label><br>
                                 <label>
-                                    <input type="radio" name="question-2" value="2">
+                                    <input type="radio" name="questions[1]" value="2">
                                     Я испытываю умеренные трудности с мытьём или одеванием
                                 </label><br>
                                 <label>
-                                    <input type="radio" name="question-2" value="3">
+                                    <input type="radio" name="questions[1]" value="1">
                                     Я испытываю большие трудности с мытьём или одеванием
                                 </label><br>
                                 <label>
-                                    <input type="radio" name="question-2" value="4">
+                                    <input type="radio" name="questions[1]" value="0">
                                     Я не в состоянии сам (-а) мыться или одеваться
                                 </label>
                             </li>
@@ -97,69 +99,69 @@
                                 <p class="test-eq5d3l-question">ПРИВЫЧНАЯ ПОВСЕДНЕВНАЯ ДЕЯТЕЛЬНОСТЬ <i>(например: работа, учёба, работа по дому, 
                                     участие в делах семьи, досуг)</i></p>
                                 <label>
-                                    <input type="radio" name="question-3" value="0">
+                                    <input type="radio" name="questions[2]" value="4">
                                     Моя привычная повседневная деятельность даётся мне без труда
                                 </label><br>
                                 <label>
-                                    <input type="radio" name="question-3" value="1">
+                                    <input type="radio" name="questions[2]" value="3">
                                     Моя привычная повседневная деятельность для меня немного затруднительна
                                 </label><br>
                                 <label>
-                                    <input type="radio" name="question-3" value="2">
+                                    <input type="radio" name="questions[2]" value="2">
                                     Моя привычная повседневная деятельность для меня умеренно затруднительна
                                 </label><br>
                                 <label>
-                                    <input type="radio" name="question-3" value="3">
+                                    <input type="radio" name="questions[2]" value="1">
                                     Моя привычная повседневная деятельность для меня очень затруднительна
                                 </label><br>
                                 <label>
-                                    <input type="radio" name="question-3" value="4">
+                                    <input type="radio" name="questions[2]" value="0">
                                     Я не в состоянии заниматься своей привычной повседневной деятельностью
                                 </label>
                             </li>
                             <li class="test-eq5d3l-list-item">
                                 <p class="test-eq5d3l-question">БОЛЬ/ДИСКОМФОРТ</p>
                                 <label>
-                                    <input type="radio" name="question-4" value="0">
+                                    <input type="radio" name="questions[3]" value="4">
                                     Я не испытываю боли или дискомфорта
                                 </label><br>
                                 <label>
-                                    <input type="radio" name="question-4" value="1">
+                                    <input type="radio" name="questions[3]" value="3">
                                     Я испытываю небольшую боль или дискомфорт
                                 </label><br>
                                 <label>
-                                    <input type="radio" name="question-4" value="2">
+                                    <input type="radio" name="questions[3]" value="2">
                                     Я испытыаю умеренную боль или дискомфорт
                                 </label><br>
                                 <label>
-                                    <input type="radio" name="question-4" value="3">
+                                    <input type="radio" name="questions[3]" value="1">
                                     Я испытываю сильную боль или дискомфорт
                                 </label><br>
                                 <label>
-                                    <input type="radio" name="question-4" value="4">
+                                    <input type="radio" name="questions[3]" value="0">
                                     Я не в состоянии заниматься своей привычной повседневной деятельностью
                                 </label>
                             </li>
                             <li class="test-eq5d3l-list-item">
                                 <p class="test-eq5d3l-question">ТРЕВОГА/ДЕПРЕССИЯ</p>
                                 <label>
-                                    <input type="radio" name="question-5" value="0">
+                                    <input type="radio" name="questions[4]" value="4">
                                     Я не испытываю тревоги или депрессии
                                 </label><br>
                                 <label>
-                                    <input type="radio" name="question-5" value="1">
+                                    <input type="radio" name="questions[4]" value="3">
                                     Я испытываю небольшую тревогу или депрессию
                                 </label><br>
                                 <label>
-                                    <input type="radio" name="question-5" value="2">
+                                    <input type="radio" name="questions[4]" value="2">
                                     Я испытыаю умеренную тревогу или депрессию
                                 </label><br>
                                 <label>
-                                    <input type="radio" name="question-5" value="3">
+                                    <input type="radio" name="questions[4]" value="1">
                                     Я испытываю сильную тревогу или депрессию
                                 </label><br>
                                 <label>
-                                    <input type="radio" name="question-5" value="4">
+                                    <input type="radio" name="questions[4]" value="0">
                                     Я испытываю крайне сильную тревогу или депрессию
                                 </label>
                             </li>
@@ -168,7 +170,7 @@
                                     себе представить, а 100 - наилучшее. Укажите место, которое, по Вашему мнению, соответсвует 
                                     состоянию Вашего здоровья СЕГОДНЯ.</p>
                                 <label class="health-level">СОСТОЯНИЕ ВАШЕГО ЗДОРОВЬЯ СЕГОДНЯ <output name="healthoutput">50</output><br>
-                                    0 <input type="range" id="health" name="health" min="0" max="100" value="50" step="1"> 100
+                                    0 <input type="range" id="health" name="questions[5]" min="0" max="100" value="50" step="1"> 100
                                 </label>
                             </li>
                          </ul>

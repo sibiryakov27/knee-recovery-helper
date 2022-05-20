@@ -1,6 +1,6 @@
 package com.kneerecoveryhelper.service;
 
-import com.kneerecoveryhelper.controller.requests.OksRequest;
+import com.kneerecoveryhelper.controller.requests.TestResult;
 import com.kneerecoveryhelper.entity.OksQuestionResultEntity;
 import com.kneerecoveryhelper.entity.OksResultEntity;
 import com.kneerecoveryhelper.entity.PatientEntity;
@@ -25,17 +25,17 @@ public class OksService {
   private PatientRepository patientRepository;
   private OksQuestionRepository oksQuestionRepository;
 
-  public OksResultEntity saveTestResult(OksRequest oksRequest, Integer id) throws ParseException {
+  public OksResultEntity saveTestResult(TestResult testResult, Integer id) throws ParseException {
     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
-    Date date = dateFormat.parse(oksRequest.getPassageDate());
-    Integer points = getOksPoints(oksRequest);
+    Date date = dateFormat.parse(testResult.getPassageDate());
+    Integer points = getOksPoints(testResult);
     PatientEntity patient = patientRepository.getById(id);
 
     Optional<OksResultEntity> oksResult = oksRepository.findByPassageDate(date);
     if (oksResult.isEmpty()) {
       OksResultEntity newOksResult = new OksResultEntity();
-      List<OksQuestionResultEntity> questionsResult = getQuestionsResult(oksRequest, newOksResult);
+      List<OksQuestionResultEntity> questionsResult = getQuestionsResult(testResult, newOksResult);
       Integer diffInWeeks = getWeekDifferencesInDates(patient.getStartRecoveryDate(), date);
 
       newOksResult
@@ -48,7 +48,7 @@ public class OksService {
       return oksRepository.save(newOksResult);
     } else {
       OksResultEntity updatedOksResult = oksResult.get();
-      List<OksQuestionResultEntity> questionsResult = updateQuestionsResult(oksRequest, updatedOksResult);
+      List<OksQuestionResultEntity> questionsResult = updateQuestionsResult(testResult, updatedOksResult);
       updatedOksResult
           .setPoints(points)
           .setQuestionsResult(questionsResult);
@@ -57,22 +57,22 @@ public class OksService {
     }
   }
 
-  private Integer getOksPoints(OksRequest oksRequest) {
+  private Integer getOksPoints(TestResult testResult) {
     Integer points = 0;
-    for (Integer point : oksRequest.getQuestions()) {
+    for (Integer point : testResult.getQuestions()) {
       points += point;
     }
 
     return points;
   }
 
-  private List<OksQuestionResultEntity> getQuestionsResult(OksRequest oksRequest, OksResultEntity resultEntity) {
+  private List<OksQuestionResultEntity> getQuestionsResult(TestResult testResult, OksResultEntity resultEntity) {
     List<OksQuestionResultEntity> questionsResult = new ArrayList<>();
-    for (int i = 0; i < oksRequest.getQuestions().size(); i++) {
+    for (int i = 0; i < testResult.getQuestions().size(); i++) {
       OksQuestionResultEntity oksQuestionResult = new OksQuestionResultEntity();
       oksQuestionResult
           .setQuestionNumber(i + 1)
-          .setPoints(oksRequest.getQuestions().get(i))
+          .setPoints(testResult.getQuestions().get(i))
               .setOksResult(resultEntity);
 
       questionsResult.add(oksQuestionResult);
@@ -81,10 +81,10 @@ public class OksService {
     return questionsResult;
   }
 
-  private List<OksQuestionResultEntity> updateQuestionsResult(OksRequest oksRequest, OksResultEntity oksResult) {
+  private List<OksQuestionResultEntity> updateQuestionsResult(TestResult testResult, OksResultEntity oksResult) {
     List<OksQuestionResultEntity> questionsResult = oksQuestionRepository.getAllByOksResultOrderByQuestionNumber(oksResult);
     for (int i = 0; i < questionsResult.size(); i++) {
-      questionsResult.get(i).setPoints(oksRequest.getQuestions().get(i));
+      questionsResult.get(i).setPoints(testResult.getQuestions().get(i));
     }
 
     return questionsResult;

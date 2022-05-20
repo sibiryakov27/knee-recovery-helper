@@ -1,6 +1,6 @@
 package com.kneerecoveryhelper.controller;
 
-import com.kneerecoveryhelper.controller.requests.OksRequest;
+import com.kneerecoveryhelper.controller.requests.TestResult;
 import com.kneerecoveryhelper.service.OksService;
 import com.kneerecoveryhelper.service.PatientService;
 import com.kneerecoveryhelper.controller.requests.PatientRequest;
@@ -54,7 +54,12 @@ public class MainController {
   }
 
   @GetMapping("/test-eq5d3l")
-  public String showTestEQ5D3LPage() {
+  public String showTestEQ5D3LPage(
+      @AuthenticationPrincipal UserEntity user,
+      Model model
+  ) {
+    PatientEntity patient = patientService.getPatientById(user.getId());
+    model.addAttribute("patient", patient);
     return "test-eq-5d-3l";
   }
 
@@ -83,11 +88,21 @@ public class MainController {
   @PostMapping("/test-oks/{id}/save")
   public String saveOksResult(
       @PathVariable Integer id,
-      OksRequest oksRequest,
+      TestResult testResult,
       Model model
   ) throws ParseException {
-    oksService.saveTestResult(oksRequest, id);
+    oksService.saveTestResult(testResult, id);
     return "redirect:/test-oks";
+  }
+
+  @PostMapping("/test-eq5d3l/{id}/save")
+  public String saveEq5d3lResult(
+      @PathVariable Integer id,
+      TestResult testResult,
+      Model model
+  ) {
+    System.out.println(testResult);
+    return "redirect:/test-eq5d3l";
   }
 
 }
