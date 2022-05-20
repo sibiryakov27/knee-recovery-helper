@@ -16,11 +16,13 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.experimental.Accessors;
 
 @Entity
 @Table(name = "oks_result")
 @Getter
 @Setter
+@Accessors(chain = true)
 public class OksResultEntity {
 
   @Id
@@ -40,8 +42,7 @@ public class OksResultEntity {
   @JoinColumn(name = "patient_id")
   private PatientEntity patient;
 
-  @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-  @JoinColumn(name = "id")
+  @OneToMany(mappedBy = "oksResult")
   private List<OksQuestionResultEntity> questionsResult = new ArrayList<>();
 
 }
