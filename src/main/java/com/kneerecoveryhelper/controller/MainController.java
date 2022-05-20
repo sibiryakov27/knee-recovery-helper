@@ -1,10 +1,12 @@
 package com.kneerecoveryhelper.controller;
 
 import com.kneerecoveryhelper.controller.requests.OksRequest;
+import com.kneerecoveryhelper.service.OksService;
 import com.kneerecoveryhelper.service.PatientService;
 import com.kneerecoveryhelper.controller.requests.PatientRequest;
 import com.kneerecoveryhelper.entity.PatientEntity;
 import com.kneerecoveryhelper.entity.UserEntity;
+import java.text.ParseException;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
@@ -19,6 +21,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 public class MainController {
 
   private PatientService patientService;
+  private OksService oksService;
 
   @GetMapping("/")
   public String showIndexPage() {
@@ -82,8 +85,8 @@ public class MainController {
       @PathVariable Integer id,
       OksRequest oksRequest,
       Model model
-  ) {
-    System.out.println(oksRequest);
+  ) throws ParseException {
+    oksService.saveTestResult(oksRequest, id);
     return "redirect:/test-oks";
   }
 
