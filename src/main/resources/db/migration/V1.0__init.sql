@@ -13,7 +13,7 @@ CREATE TABLE patients (
     id SERIAL PRIMARY KEY,
     start_recovery_date DATE NOT NULL,
     medical_card_number VARCHAR(32),
-    FOREIGN KEY (id) REFERENCES patients(id)
+    FOREIGN KEY (id) REFERENCES usrs(id)
 );
 
 CREATE TABLE roles (
