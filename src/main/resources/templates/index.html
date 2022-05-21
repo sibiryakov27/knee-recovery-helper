@@ -73,9 +73,26 @@
                         <div class="feedback-form-group">
                             <label for="topic">Тема обращения:</label>
                             <select name="topic" id="topic">
-                                <option value="1">Вопрос по курсу реабилитации</option>
-                                <option value="2">Жалоба на здоровье</option>
-                                <option value="3">Другое</option>
+                                <option value="Вопрос по курсу реабилитации">Вопрос по курсу реабилитации</option>
+                                <option value="Жалоба на здоровье">Жалоба на здоровье</option>
+                                <option value="Другое">Другое</option>
+                            </select>
+                        </div>
+                        <div class="feedback-form-group">
+                            <label for="complaint">Жалоба:</label>
+                            <select name="complaint" id="complaint" disabled>
+                                <option value="Повышение температуры тела">
+                                    Повышение температуры тела
+                                </option>
+                                <option value="Обострение болей и усиление отёка в прооперированном коленном суставе">
+                                    Обострение болей и усиление отёка в прооперированном коленном суставе
+                                </option>
+                                <option class="" value="Появились выделения в области послеоперационного рубца">
+                                    Выделения в области послеоперационного рубца
+                                </option>
+                                <option value="Другое">
+                                    Другое
+                                </option>
                             </select>
                         </div>
                         <div class="feedback-form-group">
@@ -113,5 +130,7 @@
                 <span class="copyright">© 2022 Knee recovery helper</span>
             </div>
         </footer>
+
+        <script type="text/javascript" src="js/indexScript.js"></script>
     </body>
 </html>
