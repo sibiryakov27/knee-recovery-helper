@@ -1,6 +1,7 @@
 package com.kneerecoveryhelper.controller;
 
-import com.kneerecoveryhelper.controller.requests.TestResult;
+import com.kneerecoveryhelper.controller.requests.Eq5d5lRequest;
+import com.kneerecoveryhelper.controller.requests.OksRequest;
 import com.kneerecoveryhelper.service.OksService;
 import com.kneerecoveryhelper.service.PatientService;
 import com.kneerecoveryhelper.controller.requests.PatientRequest;
@@ -88,20 +89,20 @@ public class MainController {
   @PostMapping("/test-oks/{id}/save")
   public String saveOksResult(
       @PathVariable Integer id,
-      TestResult testResult,
+      OksRequest oksRequest,
       Model model
   ) throws ParseException {
-    oksService.saveTestResult(testResult, id);
+    oksService.saveTestResult(oksRequest, id);
     return "redirect:/test-oks";
   }
 
   @PostMapping("/test-eq5d5l/{id}/save")
   public String saveEq5d3lResult(
       @PathVariable Integer id,
-      TestResult testResult,
+      Eq5d5lRequest eq5d5lRequest,
       Model model
   ) {
-    System.out.println(testResult);
+    System.out.println(eq5d5lRequest);
     return "redirect:/test-eq5d5l";
   }
 

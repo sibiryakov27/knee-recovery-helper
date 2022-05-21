@@ -4,7 +4,7 @@ import java.util.List;
 import lombok.Data;
 
 @Data
-public class TestResult {
+public class OksRequest {
 
   private String passageDate;
   private List<Integer> questions;
