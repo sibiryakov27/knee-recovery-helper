@@ -22,7 +22,7 @@ CREATE TABLE roles (
     FOREIGN KEY (id) REFERENCES usrs(id)
 );
 
-create table reports (
+CREATE TABLE reports (
     id SERIAL PRIMARY KEY,
     patient_id INTEGER NOT NULL,
     week_number INTEGER NOT NULL,
@@ -31,7 +31,7 @@ create table reports (
     FOREIGN KEY (patient_id) REFERENCES patients(id)
 );
 
-create table oks_result (
+CREATE TABLE oks_result (
     id SERIAL PRIMARY KEY,
     points INTEGER NOT NULL,
     patient_id INTEGER NOT NULL,
@@ -40,7 +40,7 @@ create table oks_result (
     FOREIGN KEY (patient_id) REFERENCES patients(id)
 );
 
-create table eq5d5l_result (
+CREATE TABLE eq5d5l_result (
     id SERIAL PRIMARY KEY,
     mobility INTEGER NOT NULL,
     self_care INTEGER NOT NULL,
@@ -54,7 +54,7 @@ create table eq5d5l_result (
     FOREIGN KEY (patient_id) REFERENCES patients(id)
 );
 
-create table oks_question_result (
+CREATE TABLE oks_question_result (
     id SERIAL PRIMARY KEY,
     points INTEGER NOT NULL,
     oks_id INTEGER NOT NULL,
