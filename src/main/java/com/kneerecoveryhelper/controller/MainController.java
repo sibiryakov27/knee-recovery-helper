@@ -2,6 +2,7 @@ package com.kneerecoveryhelper.controller;
 
 import com.kneerecoveryhelper.controller.requests.Eq5d5lRequest;
 import com.kneerecoveryhelper.controller.requests.OksRequest;
+import com.kneerecoveryhelper.service.Eq5d5lService;
 import com.kneerecoveryhelper.service.OksService;
 import com.kneerecoveryhelper.service.PatientService;
 import com.kneerecoveryhelper.controller.requests.PatientRequest;
@@ -23,6 +24,7 @@ public class MainController {
 
   private PatientService patientService;
   private OksService oksService;
+  private Eq5d5lService eq5d5lService;
 
   @GetMapping("/")
   public String showIndexPage() {
@@ -101,8 +103,8 @@ public class MainController {
       @PathVariable Integer id,
       Eq5d5lRequest eq5d5lRequest,
       Model model
-  ) {
-    System.out.println(eq5d5lRequest);
+  ) throws ParseException {
+    eq5d5lService.saveTestResult(eq5d5lRequest, id);
     return "redirect:/test-eq5d5l";
   }
 
