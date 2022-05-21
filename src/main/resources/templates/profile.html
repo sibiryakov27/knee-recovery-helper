@@ -66,11 +66,13 @@
                                 </div>
                                 <div class="personal-data-form-group">
                                     <label for="tel">Телефон</label>
-                                    <input type="tel" name="phoneNumber" id="tel" th:value="${patient.getPhoneNumber()}">
+                                    <input type="tel" name="phoneNumber" id="tel" th:value="${patient.getPhoneNumber()}"
+                                           pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="XXX-XXX-XXXX">
                                 </div>
                                 <div class="personal-data-form-group">
                                     <label for="med-number">Номер медицинской карты</label>
-                                    <input type="text" name="medicalCardNumber" id="med-number" th:value="${patient.getMedicalCardNumber()}" readonly>
+                                    <input type="text" name="medicalCardNumber" id="med-number"
+                                           th:value="${patient.getMedicalCardNumber()}" readonly>
                                 </div>
                             </div>
                         </div>

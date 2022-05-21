@@ -53,16 +53,24 @@
 }
 
 .first-group,
-.second-group {
+.second-group,
+.third-group {
     padding-bottom: 30px;
     margin-bottom: 26px;
     border-bottom: 1px solid rgba(44, 49, 87, 0.3);
+}
+
+.third-group {
+    margin-bottom: 20px;
 }
 
 .first-group {
     margin-top: 56px;
 }
 
-.third-group {
+.exercise-form .btn {
+    display: block;
     margin-bottom: 60px;
+    margin-left: auto;
+    margin-right: auto;
 }
