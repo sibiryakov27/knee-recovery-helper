@@ -9,6 +9,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface OksRepository extends JpaRepository<OksResultEntity, Integer> {
 
-  Optional<OksResultEntity> findByPassageDate(Date date);
+  Optional<OksResultEntity> findByWeekNumber(Integer weekNumber);
 
 }

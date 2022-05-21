@@ -31,19 +31,19 @@ public class OksService {
     Date date = dateFormat.parse(testResult.getPassageDate());
     Integer points = getOksPoints(testResult);
     PatientEntity patient = patientRepository.getById(id);
+    Integer weekNumber = getWeekDifferencesInDates(patient.getStartRecoveryDate(), date);
 
-    Optional<OksResultEntity> oksResult = oksRepository.findByPassageDate(date);
+    Optional<OksResultEntity> oksResult = oksRepository.findByWeekNumber(weekNumber);
     if (oksResult.isEmpty()) {
       OksResultEntity newOksResult = new OksResultEntity();
       List<OksQuestionResultEntity> questionsResult = getQuestionsResult(testResult, newOksResult);
-      Integer diffInWeeks = getWeekDifferencesInDates(patient.getStartRecoveryDate(), date);
 
       newOksResult
           .setPatient(patient)
           .setPassageDate(date)
           .setPoints(points)
           .setQuestionsResult(questionsResult)
-          .setWeekNumber(diffInWeeks);
+          .setWeekNumber(weekNumber);
 
       return oksRepository.save(newOksResult);
     } else {

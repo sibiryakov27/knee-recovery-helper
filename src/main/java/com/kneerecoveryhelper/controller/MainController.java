@@ -53,14 +53,14 @@ public class MainController {
     return "profile";
   }
 
-  @GetMapping("/test-eq5d3l")
+  @GetMapping("/test-eq5d5l")
   public String showTestEQ5D3LPage(
       @AuthenticationPrincipal UserEntity user,
       Model model
   ) {
     PatientEntity patient = patientService.getPatientById(user.getId());
     model.addAttribute("patient", patient);
-    return "test-eq-5d-3l";
+    return "test-eq-5d-5l";
   }
 
   @GetMapping("/test-oks")
@@ -95,14 +95,14 @@ public class MainController {
     return "redirect:/test-oks";
   }
 
-  @PostMapping("/test-eq5d3l/{id}/save")
+  @PostMapping("/test-eq5d5l/{id}/save")
   public String saveEq5d3lResult(
       @PathVariable Integer id,
       TestResult testResult,
       Model model
   ) {
     System.out.println(testResult);
-    return "redirect:/test-eq5d3l";
+    return "redirect:/test-eq5d5l";
   }
 
 }

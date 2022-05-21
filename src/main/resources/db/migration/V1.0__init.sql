@@ -40,9 +40,14 @@ create table oks_result (
     FOREIGN KEY (patient_id) REFERENCES patients(id)
 );
 
-create table eq5d3l_result (
+create table eq5d5l_result (
     id SERIAL PRIMARY KEY,
-    points INTEGER NOT NULL,
+    mobility INTEGER NOT NULL,
+    self_care INTEGER NOT NULL,
+    usual_activities INTEGER NOT NULL,
+    pain INTEGER NOT NULL,
+    anxiety INTEGER NOT NULL,
+    health INTEGER NOT NULL,
     patient_id INTEGER NOT NULL,
     passage_date DATE NOT NULL,
     week_number INTEGER NOT NULL,
@@ -55,12 +60,4 @@ create table oks_question_result (
     oks_id INTEGER NOT NULL,
     question_number INTEGER NOT NULL,
     FOREIGN KEY (oks_id) REFERENCES oks_result(id)
-);
-
-create table eq5d3l_question_result (
-    id SERIAL PRIMARY KEY,
-    points INTEGER NOT NULL,
-    eq5d3l_id INTEGER NOT NULL,
-    question_number INTEGER NOT NULL,
-    FOREIGN KEY (eq5d3l_id) REFERENCES eq5d3l_result(id)
 );

@@ -18,18 +18,33 @@ import lombok.Setter;
 import lombok.experimental.Accessors;
 
 @Entity
-@Table(name = "eq5d3l_result")
+@Table(name = "eq5d5l_result")
 @Getter
 @Setter
 @Accessors(chain = true)
-public class Eq5d3lResultEntity {
+public class Eq5d5lResultEntity {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
 
   @Column()
-  private Integer points;
+  private Integer mobility;
+
+  @Column(name = "self_care")
+  private Integer selfCare;
+
+  @Column(name = "usual_activities")
+  private Integer usualActivities;
+
+  @Column
+  private Integer pain;
+
+  @Column
+  private Integer anxiety;
+
+  @Column
+  private Integer health;
 
   @Column(name = "passage_date", columnDefinition = "DATE")
   private Date passageDate;
@@ -40,8 +55,5 @@ public class Eq5d3lResultEntity {
   @ManyToOne(fetch = FetchType.EAGER)
   @JoinColumn(name = "patient_id")
   private PatientEntity patient;
-
-  @OneToMany(mappedBy = "eq5d3lResult")
-  private List<Eq5d3lQuestionResultEntity> questionsResult = new ArrayList<>();
 
 }

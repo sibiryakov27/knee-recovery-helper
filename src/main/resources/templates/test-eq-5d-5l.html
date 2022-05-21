@@ -25,7 +25,7 @@
                             <a href="/test-oks">Анкета OKS</a>
                         </li>
                         <li class="site-navigation-item current">
-                            <a>Анкета EQ-5D-3L</a>
+                            <a>Анкета EQ-5D-5L</a>
                         </li>
                         <li class="site-navigation-item">
                             <a href="/about-system">О системе</a>
@@ -39,14 +39,14 @@
         </header>
 
         <main>
-            <div class="container"><h1 class="page-title">Анкета EQ-5D-3L</h1></div>
+            <div class="container"><h1 class="page-title">Анкета EQ-5D-5L</h1></div>
             <section class="test-eq5d3l">
                 <div class="container">
                     <p class="test-eq5d3l-tip"><b>Вы ещё не заполняли данную анкету</b></p>
                     <p>В каждом разделе отметьте один вариант ответа, который наилучшим образом 
                         отражает состояние Вашего коленного сустава сегодня.</p>
                     <form class="test-eq5d3l-form" oninput="healthoutput.value=health.value"
-                          th:action="@{/test-eq5d3l/{id}/save(id = ${patient.getId()})}" th:method="post">
+                          th:action="@{/test-eq5d5l/{id}/save(id = ${patient.getId()})}" th:method="post">
                         <input type="hidden" name="passageDate" th:value="${#dates.format(#dates.createNow(), 'yyyy-MM-dd')}">
                         <ul class="test-eq5d3l-list">
                             <li class="test-eq5d3l-list-item">
@@ -193,7 +193,7 @@
                         <a href="/test-oks">Анкета OKS</a>
                     </li>
                     <li class="footer-navigation-item current">
-                        <a>Анкета EQ-5D-3L</a>
+                        <a>Анкета EQ-5D-5L</a>
                     </li>
                     <li class="footer-navigation-item">
                         <a href="/about-system">О системе</a>
