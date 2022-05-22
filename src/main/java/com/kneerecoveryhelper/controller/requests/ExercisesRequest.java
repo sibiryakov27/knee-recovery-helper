@@ -1,19 +1,18 @@
 package com.kneerecoveryhelper.controller.requests;
 
-import java.util.Date;
 import lombok.Data;
 
 @Data
 public class ExercisesRequest {
 
   private String exerciseDate;
-  private Boolean firstExercise;
-  private Boolean secondExercise;
-  private Boolean thirdExercise;
-  private Boolean fourthExercise;
-  private Boolean fifthExercise;
-  private Boolean sixthExercise;
-  private Boolean seventhExercise;
+  private Boolean firstExercise = false;
+  private Boolean secondExercise = false;
+  private Boolean thirdExercise = false;
+  private Boolean fourthExercise = false;
+  private Boolean fifthExercise = false;
+  private Boolean sixthExercise = false;
+  private Boolean seventhExercise = false;
 
 
 }

@@ -4,6 +4,7 @@ import com.kneerecoveryhelper.controller.requests.Eq5d5lRequest;
 import com.kneerecoveryhelper.controller.requests.ExercisesRequest;
 import com.kneerecoveryhelper.controller.requests.OksRequest;
 import com.kneerecoveryhelper.service.Eq5d5lService;
+import com.kneerecoveryhelper.service.ExercisesService;
 import com.kneerecoveryhelper.service.OksService;
 import com.kneerecoveryhelper.service.PatientService;
 import com.kneerecoveryhelper.controller.requests.PatientRequest;
@@ -26,6 +27,7 @@ public class MainController {
   private PatientService patientService;
   private OksService oksService;
   private Eq5d5lService eq5d5lService;
+  private ExercisesService exercisesService;
 
   @GetMapping("/")
   public String showIndexPage() {
@@ -119,7 +121,8 @@ public class MainController {
       @PathVariable Integer id,
       ExercisesRequest exercisesRequest,
       Model model
-  ) {
+  ) throws ParseException {
+    exercisesService.saveExercisesResult(exercisesRequest, id);
     return "redirect:/exercises";
   }
 

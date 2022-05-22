@@ -5,11 +5,11 @@ import com.kneerecoveryhelper.entity.Eq5d5lResultEntity;
 import com.kneerecoveryhelper.entity.PatientEntity;
 import com.kneerecoveryhelper.repository.Eq5d5lRepository;
 import com.kneerecoveryhelper.repository.PatientRepository;
+import com.kneerecoveryhelper.util.Util;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Optional;
-import java.util.concurrent.TimeUnit;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
@@ -28,7 +28,7 @@ public class Eq5d5lService {
 
     Date date = dateFormat.parse(eq5d5lRequest.getPassageDate());
     PatientEntity patient = patientRepository.getById(id);
-    Integer weekNumber = getWeekDifferencesInDates(patient.getStartRecoveryDate(), date);
+    Integer weekNumber = Util.getWeekDifferencesInDates(patient.getStartRecoveryDate(), date);
 
     Optional<Eq5d5lResultEntity> eq5d5lResult = eq5d5lRepository.findByWeekNumber(weekNumber);
     if (eq5d5lResult.isEmpty()) {
@@ -50,13 +50,6 @@ public class Eq5d5lService {
           .setHealth(eq5d5lRequest.getHealth());
       return eq5d5lRepository.save(updatedEq5d5lResult);
     }
-  }
-
-  private Integer getWeekDifferencesInDates(Date firstDate, Date secondDate) {
-    long diffInMillies = Math.abs(secondDate.getTime() - firstDate.getTime());
-
-    return Math.toIntExact(
-        TimeUnit.DAYS.convert(diffInMillies, TimeUnit.MILLISECONDS) / 7 + 1);
   }
 
 }

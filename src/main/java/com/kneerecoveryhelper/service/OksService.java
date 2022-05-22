@@ -7,13 +7,13 @@ import com.kneerecoveryhelper.entity.PatientEntity;
 import com.kneerecoveryhelper.repository.OksQuestionRepository;
 import com.kneerecoveryhelper.repository.OksRepository;
 import com.kneerecoveryhelper.repository.PatientRepository;
+import com.kneerecoveryhelper.util.Util;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
-import java.util.concurrent.TimeUnit;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -31,7 +31,7 @@ public class OksService {
     Date date = dateFormat.parse(oksRequest.getPassageDate());
     Integer points = getOksPoints(oksRequest);
     PatientEntity patient = patientRepository.getById(id);
-    Integer weekNumber = getWeekDifferencesInDates(patient.getStartRecoveryDate(), date);
+    Integer weekNumber = Util.getWeekDifferencesInDates(patient.getStartRecoveryDate(), date);
 
     Optional<OksResultEntity> oksResult = oksRepository.findByWeekNumber(weekNumber);
     if (oksResult.isEmpty()) {
@@ -88,13 +88,6 @@ public class OksService {
     }
 
     return questionsResult;
-  }
-
-  private Integer getWeekDifferencesInDates(Date firstDate, Date secondDate) {
-    long diffInMillies = Math.abs(secondDate.getTime() - firstDate.getTime());
-
-    return Math.toIntExact(
-        TimeUnit.DAYS.convert(diffInMillies, TimeUnit.MILLISECONDS) / 7 + 1);
   }
 
 }
