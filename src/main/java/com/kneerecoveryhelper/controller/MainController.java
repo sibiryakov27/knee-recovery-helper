@@ -1,6 +1,7 @@
 package com.kneerecoveryhelper.controller;
 
 import com.kneerecoveryhelper.controller.requests.Eq5d5lRequest;
+import com.kneerecoveryhelper.controller.requests.ExercisesRequest;
 import com.kneerecoveryhelper.controller.requests.OksRequest;
 import com.kneerecoveryhelper.service.Eq5d5lService;
 import com.kneerecoveryhelper.service.OksService;
@@ -42,7 +43,12 @@ public class MainController {
   }
 
   @GetMapping("/exercises")
-  public String showExercisesPage() {
+  public String showExercisesPage(
+      @AuthenticationPrincipal UserEntity user,
+      Model model
+  ) {
+    PatientEntity patient = patientService.getPatientById(user.getId());
+    model.addAttribute("patient", patient);
     return "exercises";
   }
 
@@ -106,6 +112,15 @@ public class MainController {
   ) throws ParseException {
     eq5d5lService.saveTestResult(eq5d5lRequest, id);
     return "redirect:/test-eq5d5l";
+  }
+
+  @PostMapping("exercises/{id}/save")
+  public String saveExercisesResult(
+      @PathVariable Integer id,
+      ExercisesRequest exercisesRequest,
+      Model model
+  ) {
+    return "redirect:/exercises";
   }
 
 }
