@@ -1,6 +1,6 @@
 CREATE TABLE exercises_status (
     id SERIAL PRIMARY KEY,
-    first_exercise INTEGER NOT NULL,
+    first_exercise BOOLEAN,
     second_exercise BOOLEAN,
     third_exercise BOOLEAN,
     fourth_exercise BOOLEAN,
