@@ -43,3 +43,12 @@ main {
 .login-submit {
   text-align: center;
 }
+
+.registration-link {
+  margin: 0;
+  text-align: center;
+}
+
+.btn-registration {
+  width: 230px;
+}

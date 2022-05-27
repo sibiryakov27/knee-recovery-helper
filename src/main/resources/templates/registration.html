@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Knee Recovery Helper</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css"/>
+  <link rel="stylesheet" type="text/css" href="css/login.css"/>
+</head>
+<body>
+<main class="login-container">
+  <div class="logo">
+    <img src="img/logo.png" alt="Knee recovery helper" width="154" height="84">
+  </div>
+  <section class="login">
+    <h2 class="section-title">Введите данные для регистрации</h2>
+    <form class="login-form" action="/registration" th:action="@{/registration}" method="post">
+      <div class="login-form-group">
+        <input type="text" name="medicalCardNumber" placeholder="Номер медицинской карты"/>
+      </div>
+      <div class="login-form-group login-submit">
+        <input type="submit" class="btn btn-registration" value="Зарегистрироваться"/>
+      </div>
+    </form>
+  </section>
+</main>
+</body>
+</html>

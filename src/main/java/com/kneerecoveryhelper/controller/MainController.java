@@ -5,6 +5,7 @@ import com.kneerecoveryhelper.controller.requests.ExercisesRequest;
 import com.kneerecoveryhelper.controller.requests.OksRequest;
 import com.kneerecoveryhelper.service.Eq5d5lService;
 import com.kneerecoveryhelper.service.ExercisesService;
+import com.kneerecoveryhelper.service.ExternalDbService;
 import com.kneerecoveryhelper.service.OksService;
 import com.kneerecoveryhelper.service.PatientService;
 import com.kneerecoveryhelper.controller.requests.PatientRequest;
@@ -28,6 +29,7 @@ public class MainController {
   private OksService oksService;
   private Eq5d5lService eq5d5lService;
   private ExercisesService exercisesService;
+  private ExternalDbService externalDbService;
 
   @GetMapping("/")
   public String showIndexPage() {
@@ -37,6 +39,18 @@ public class MainController {
   @GetMapping("/login")
   public String login() {
     return "login";
+  }
+
+  @GetMapping("/registration")
+  public String registration() {
+    return "/registration";
+  }
+
+  @PostMapping("/registration")
+  public String addPatient(String medicalCardNumber) {
+    PatientEntity patient = externalDbService.getPatientByMedicalCardNumber(medicalCardNumber);
+    patientService.savePatient(patient);
+    return "redirect:/login";
   }
 
   @GetMapping("/about-system")

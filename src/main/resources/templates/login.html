@@ -17,6 +17,7 @@
       <div th:if="${param.error}" class="error-message">
         Неверный логин или пароль
       </div>
+      <a class="registration-link" href="/registration">Регистрация по номеру медицинской карты</a>
       <form class="login-form" action="/login" th:action="@{/login}" method="post">
         <div class="login-form-group">
           <input type="text" name="username" placeholder="Адрес электронной почты"/>

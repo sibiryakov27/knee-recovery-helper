@@ -33,4 +33,8 @@ public class PatientService {
     return updatedPatient;
   }
 
+  public PatientEntity savePatient(PatientEntity patient) {
+    return patientRepository.save(patient);
+  }
+
 }
